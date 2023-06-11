@@ -1,4 +1,4 @@
-export default function Login() {
+export default function Login (): React.ReactNode {
   return (
     <form>
       <div className="h-screen flex flex-col justify-center items-center space-y-2">
