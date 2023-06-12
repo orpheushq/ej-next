@@ -1,5 +1,5 @@
 "use client"
 
-export default function Error() {
-    return <p>Error</p>
+export default function Error (): React.ReactNode {
+  return <p>Error</p>
 }
