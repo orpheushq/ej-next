@@ -6,7 +6,7 @@ export default function Login ({
   const status = searchParams.status
 
   return (
-    <form action={'login/actions'} method="get">
+    <form action={'login/actions'} method="post">
       <div className="h-screen flex flex-col justify-center items-center space-y-2">
         <h1>Sign In</h1>
         {typeof status !== 'undefined'
@@ -17,8 +17,8 @@ export default function Login ({
               </div>
             </div>
           : null}
-        <input type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
-        <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
+        <input type="email" name="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+        <input type="password" name="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
         <button type="submit" className="btn btn-primary">Login</button>
       </div>
     </form>
