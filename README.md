@@ -22,3 +22,6 @@ pnpm dev
 * If you get an error 'NextResponse has already been declared int he middleware
   + `yarn upgrade next@^13.4.5`
   + https://github.com/nextauthjs/next-auth/issues/7650#issuecomment-1571768250
+
+* If you get an error regarding `requestAsyncStorage` (ex: https://github.com/vercel/next.js/issues/46356)
+  + Use Node 16 instead of Node 18
