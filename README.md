@@ -14,3 +14,6 @@ yarn dev
 # or
 pnpm dev
 ```
+
+* Generate and add a new `NEXTAUTH_SECRET` in the __.env__ file.
+  + Use `openssl rand -base64 32` to generate one
