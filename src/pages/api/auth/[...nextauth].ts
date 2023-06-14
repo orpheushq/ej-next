@@ -2,7 +2,7 @@ import { authenticate } from "@/services/authService"
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
-const handler = NextAuth({
+export default NextAuth({
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -26,5 +26,3 @@ const handler = NextAuth({
   ],
   session: { strategy: "jwt" }
 })
-
-export { handler as GET, handler as POST }
