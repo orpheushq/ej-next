@@ -1,9 +1,8 @@
-import NextAuth from "next-auth"
-import type { NextAuthOptions } from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
 import { authenticate } from "@/services/authService"
+import NextAuth from "next-auth"
+import CredentialsProvider from "next-auth/providers/credentials"
 
-export const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -26,6 +25,6 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   session: { strategy: "jwt" }
-}
+})
 
-export default NextAuth(authOptions)
+export { handler as GET, handler as POST }
