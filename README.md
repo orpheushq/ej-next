@@ -17,3 +17,8 @@ pnpm dev
 
 * Generate and add a new `NEXTAUTH_SECRET` in the __.env__ file.
   + Use `openssl rand -base64 32` to generate one
+
+## Gotchas
+* If you get an error 'NextResponse has already been declared int he middleware
+  + `yarn upgrade next@^13.4.5`
+  + https://github.com/nextauthjs/next-auth/issues/7650#issuecomment-1571768250
