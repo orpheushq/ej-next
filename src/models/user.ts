@@ -7,7 +7,6 @@ export interface User {
   createdAt: string
   name: string
   apiToken: string
-  type: string
 }
 
 export interface AuthResponse {
