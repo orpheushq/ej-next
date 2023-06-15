@@ -25,3 +25,6 @@ pnpm dev
 
 * If you get an error regarding `requestAsyncStorage` (ex: https://github.com/vercel/next.js/issues/46356)
   + Use Node 16 instead of Node 18
+
+* If errors where the compiler is unable to identify moved/ changed files (specially layouts)
+  + Remove __.next__ folder and restart both the client and server
