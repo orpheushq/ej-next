@@ -13,7 +13,9 @@ export default function RootLayout ({
 }): React.ReactNode {
   return (
     <html lang="en">
-      <body className={`bg-primary h-screen w-screen`}>{children}</body>
+      <body className={`bg-primary h-screen w-screen`}>
+        {children}
+      </body>
     </html>
   )
 }
