@@ -1,5 +1,8 @@
 import '@/app/globals.css'
 import React from 'react'
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,7 +16,7 @@ export default function RootLayout ({
 }): React.ReactNode {
   return (
     <html lang="en">
-      <body className={`bg-primary h-screen w-screen`}>
+      <body className={`${montserrat.className} bg-primary min-h-screen min-w-screen`}>
         {children}
       </body>
     </html>

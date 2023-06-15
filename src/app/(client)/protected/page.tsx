@@ -7,9 +7,15 @@ export default async function Protected (req: NextRequest): Promise<any> {
   const session = await getServerSession(authOptions)
 
   return (
-    <div className='bg-red-400'>
-      <p>Protected page</p>
-      <p>Hi {session?.user.name}</p>
+    <div className='grid grid-cols-2 text-white p-4'>
+      <div>
+        <h1 className='leading-loose text-[15rem] font-extrabold text-accent'>
+          Hi {session?.user.name}!
+        </h1>
+      </div>
+      <div>
+        <p>Protected page</p>
+      </div>
     </div>
   )
 }
