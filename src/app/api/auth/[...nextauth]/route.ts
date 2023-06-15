@@ -1,7 +1,8 @@
 import { authenticate } from "@/services/authService"
 import NextAuth from "next-auth"
-import type { AuthOptions } from "next-auth"
+import type { User, AuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+import type { JWT } from "next-auth/jwt"
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -15,7 +16,8 @@ export const authOptions: AuthOptions = {
         if (typeof credentials !== "undefined") {
           const res = await authenticate(credentials.email, credentials.password)
           if (typeof res !== "undefined") {
-            return { ...res.user, apiToken: res.token }
+            const u: User = { ...res.user, apiToken: res.token, type: "User" }
+            return u
           } else {
             return null
           }
@@ -44,9 +46,9 @@ export const authOptions: AuthOptions = {
       return { ...session, user: sanitizedToken, apiToken: token.apiToken }
     },
     async jwt ({ token, user, account, profile }) {
-      if (typeof user !== "undefined") {
+      if (typeof user !== "undefined" && user.type === "User") {
         // user has just signed in so the user object is populated
-        return { ...user }
+        return user as JWT
       }
       return token
     }
