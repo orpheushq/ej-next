@@ -6,6 +6,7 @@ export interface User {
   role: string
   createdAt: string
   name: string
+  apiToken: string
 }
 
 export interface AuthResponse {
