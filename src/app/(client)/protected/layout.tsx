@@ -2,7 +2,7 @@
 import { getServerSession } from "next-auth/next"
 import React from "react"
 import { authOptions } from "@/app/(client)/api/auth/[...nextauth]/route"
-import SessionProvider from "@/context/session-provider"
+import Provider from "@/app/(client)/context/client-provider"
 
 export default async function ProtectedLayout ({
   children
@@ -12,8 +12,8 @@ export default async function ProtectedLayout ({
   const session = await getServerSession(authOptions)
 
   return (
-    <SessionProvider session={session}>
+    <Provider session={session}>
       {children}
-    </SessionProvider>
+    </Provider>
   )
 }
