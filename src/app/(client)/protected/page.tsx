@@ -15,6 +15,7 @@ export default async function Protected (req: NextRequest): Promise<any> {
       </div>
       <div>
         <p>Protected page</p>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
       </div>
     </div>
   )
