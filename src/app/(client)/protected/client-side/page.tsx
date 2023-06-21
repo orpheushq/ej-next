@@ -8,7 +8,7 @@ export default function ClientSideRoot (): any {
 
   const [shown, setShown] = useState<boolean>(false)
   const clickHandler = (): void => {
-    setShown(true)
+    setShown(!shown)
   }
 
   return (
@@ -20,7 +20,7 @@ export default function ClientSideRoot (): any {
       </div>
       <div>
         <p>Protected client page</p>
-        <button className="btn btn-primary" onClick={clickHandler}>Reveal</button>
+        <button className="btn btn-primary" onClick={clickHandler}>Toggle</button>
         {shown
           ? <pre>{JSON.stringify(session, null, 2)}</pre>
           : null
