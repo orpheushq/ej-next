@@ -1,5 +1,5 @@
 import '@/app/globals.css'
-import React from 'react'
+import type { JSX } from 'react'
 import { Montserrat } from 'next/font/google'
 import Provider from "@/app/(client)/context/client-provider"
 import { getServerSession } from "next-auth/next"
@@ -16,7 +16,7 @@ export default async function RootLayout ({
   children
 }: {
   children: React.ReactNode
-}): React.ReactNode {
+}): Promise<JSX.Element> {
   const session = await getServerSession(authOptions)
 
   return (
