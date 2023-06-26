@@ -1,5 +1,5 @@
-import './globals.css'
-import '../styles/typography.css'
+import '@/app/globals.css'
+import '@/styles/typography.css'
 import { Inter } from 'next/font/google'
 import React from 'react'
 
