@@ -1,3 +1,4 @@
+import { Button } from '@/components/Shared'
 import Link from 'next/link'
 import UserProfile from './UserProfile'
 
@@ -10,6 +11,7 @@ export default async function Staff (): Promise<JSX.Element> {
       <div>
         <UserProfile />
         <Link href='/about' className='btn btn-primary'>About Us</Link>
+        <Button variant='primary'>Hello</Button>
       </div>
     </div>
   )
