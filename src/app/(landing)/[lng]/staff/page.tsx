@@ -8,7 +8,7 @@ export default async function Staff ({ params: { lng } }: { params: { lng: strin
   return (
     <div className='grid grid-cols-2 text-white p-4'>
       <div>
-        <h1 className='leading-loose text-[15rem] font-extrabold text-accent'>Staff</h1>
+        <h1 className='leading-loose text-[15rem] font-extrabold text-accent'>{t('staff')}</h1>
       </div>
       <div>
         <UserProfile />
