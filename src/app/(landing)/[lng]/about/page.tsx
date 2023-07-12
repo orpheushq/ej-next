@@ -11,8 +11,8 @@ export default async function About (): Promise<JSX.Element> {
    * because the page has already been loaded in the background
    */
   const r = await fetch(
-    'https://hub.dummyapis.com/delay?seconds=20',
-    { cache: 'no-store' }
+    'https://hub.dummyapis.com/delay?seconds=10',
+    { cache: 'no-store' } // TODO: during development, there seems to be an issue where the soft navigation to this route gives an error. However, this is not present during production. Happened after [lng] was added
   )
   console.log(r)
   return (

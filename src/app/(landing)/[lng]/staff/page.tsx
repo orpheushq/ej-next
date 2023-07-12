@@ -1,8 +1,10 @@
 import { Button } from '@/components/Shared'
+import { useTranslation } from '@/i18n'
 import Link from 'next/link'
 import UserProfile from './UserProfile'
 
-export default async function Staff (): Promise<JSX.Element> {
+export default async function Staff ({ params: { lng } }: { params: { lng: string } }): Promise<JSX.Element> {
+  const { t } = await useTranslation(lng, 'translation')
   return (
     <div className='grid grid-cols-2 text-white p-4'>
       <div>
@@ -10,7 +12,7 @@ export default async function Staff (): Promise<JSX.Element> {
       </div>
       <div>
         <UserProfile />
-        <Link href='/about' className='btn btn-primary'>About Us</Link>
+        <Link href={`/${lng}/about`} className='btn btn-primary'>{t('about-us')}</Link>
         <Button variant='primary'>Hello</Button>
       </div>
     </div>
