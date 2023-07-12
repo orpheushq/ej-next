@@ -32,7 +32,9 @@ export default withAuth(
       if (
         !languages.some(loc => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
         !req.nextUrl.pathname.startsWith('/_next') &&
-        !req.nextUrl.pathname.endsWith('.svg')
+        !req.nextUrl.pathname.endsWith('.svg') &&
+        !req.nextUrl.pathname.startsWith('/auth') &&
+        !req.nextUrl.pathname.startsWith('/protected')
       ) {
         return NextResponse.redirect(new URL(`/${lng as string}${req.nextUrl.pathname}`, req.url))
       }

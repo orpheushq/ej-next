@@ -18,6 +18,11 @@ pnpm dev
 * Generate and add a new `NEXTAUTH_SECRET` in the __.env__ file.
   + Use `openssl rand -base64 32` to generate one
 
+## Next Auth
+* There are some default UI pages
+  + `api/auth/signin`
+  + `api/auth/signout`
+
 ## Gotchas
 * If you get an error 'NextResponse has already been declared int he middleware
   + `yarn upgrade next@^13.4.5`
