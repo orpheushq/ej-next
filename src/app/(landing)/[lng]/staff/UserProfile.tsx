@@ -1,8 +1,13 @@
 "use client"
 
+import { useTranslation } from "@/i18n/client"
 import { useEffect, useState } from "react"
+import { useParams } from 'next/navigation'
 
 export default function UserProfile (): JSX.Element {
+  const params = useParams()
+  const { t } = useTranslation(params.lng, 'staff')
+
   const [requestData, setRequesData] = useState<string>("Loading...")
 
   /**
@@ -19,7 +24,7 @@ export default function UserProfile (): JSX.Element {
   return (
     <div className='grid grid-cols-2 text-white p-4'>
       <div>
-        <p className="text-black">Client component</p>
+        <p className="text-black">{t("subtitle")}</p>
       </div>
       <div>
         <p className="text-black">{requestData}</p>
