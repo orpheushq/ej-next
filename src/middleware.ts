@@ -1,10 +1,9 @@
 import { withAuth } from "next-auth/middleware"
-
-// middleware is applied to all routes, use conditionals to select
+import stackMiddlewares from "@/middlewares/stackMiddlewares"
+import { withLocaleRedirection } from "./middlewares/withLocaleRedirection"
 
 export default withAuth(
-  function middleware (req) {
-  },
+  stackMiddlewares([withLocaleRedirection]),
   {
     callbacks: {
       authorized: ({ req, token }) => {
