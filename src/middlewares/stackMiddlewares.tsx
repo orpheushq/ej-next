@@ -1,4 +1,7 @@
-// middlewares/stackMiddlewares
+/**
+ * Utility function to stack middleware adapted from
+ * https://reacthustle.com/blog/how-to-chain-multiple-middleware-functions-in-nextjs
+ */
 import { NextResponse } from "next/server"
 import type { NextMiddleware } from "next/server"
 
