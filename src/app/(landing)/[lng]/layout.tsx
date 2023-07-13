@@ -3,7 +3,6 @@ import '@/styles/typography.css'
 import { dir } from 'i18next'
 import { languages } from '@/i18n/settings'
 import { Inter } from 'next/font/google'
-import React from 'react'
 import { FooterBase } from '@/components/layout/FooterBase'
 import { useTranslation } from '@/i18n'
 
@@ -26,7 +25,7 @@ export default async function RootLayout ({
 }: {
   children: React.ReactNode
   params: { lng: string }
-}): React.ReactNode {
+}): Promise<JSX.Element> {
   const { t } = await useTranslation(lng, 'footer')
 
   return (
