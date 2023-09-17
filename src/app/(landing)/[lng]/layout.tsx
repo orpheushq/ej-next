@@ -5,6 +5,7 @@ import { languages } from "@/i18n/settings"
 import { Inter } from "next/font/google"
 import { FooterBase } from "@/components/layout/FooterBase"
 import { useTranslation } from "@/i18n"
+import NavBase from "@/components/layout/NavBase"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <body className={inter.className}>
+        <NavBase />
         {children}
         <FooterBase t={t} lng={lng} />
       </body>
