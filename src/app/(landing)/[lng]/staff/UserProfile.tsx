@@ -2,11 +2,11 @@
 
 import { useTranslation } from "@/i18n/client"
 import { useEffect, useState } from "react"
-import { useParams } from 'next/navigation'
+import { useParams } from "next/navigation"
 
-export default function UserProfile (): JSX.Element {
+export default function UserProfile(): JSX.Element {
   const params = useParams()
-  const { t } = useTranslation(params.lng, 'staff')
+  const { t } = useTranslation(params.lng, "staff")
 
   const [requestData, setRequesData] = useState<string>("Loading...")
 
@@ -17,12 +17,12 @@ export default function UserProfile (): JSX.Element {
    */
   useEffect(() => {
     void (async () => {
-      const r = await fetch('https://hub.dummyapis.com/delay?seconds=20')
+      const r = await fetch("https://hub.dummyapis.com/delay?seconds=20")
       setRequesData(await r.text())
     })()
   }, [])
   return (
-    <div className='grid grid-cols-2 text-white p-4'>
+    <div className="grid grid-cols-2 text-white p-4">
       <div>
         <p className="text-black">{t("subtitle")}</p>
       </div>

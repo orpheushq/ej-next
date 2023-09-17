@@ -1,21 +1,22 @@
-import React from 'react'
+import React from "react"
 
-import { clsxm } from '@/utils'
+import { clsxm } from "@/utils"
 
-import styles from './Button.module.css'
+import styles from "./Button.module.css"
 
-type ButtonVariant = 'primary' | 'secondary'
+type ButtonVariant = "primary" | "secondary"
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
 }
 
-const Button = ({ children, variant = 'primary', ...rest }: Props): JSX.Element => {
+const Button = ({
+  children,
+  variant = "primary",
+  ...rest
+}: Props): JSX.Element => {
   return (
-    <button
-      className={clsxm(styles[variant])}
-      {...rest}
-    >
+    <button className={clsxm(styles[variant])} {...rest}>
       {children}
     </button>
   )
