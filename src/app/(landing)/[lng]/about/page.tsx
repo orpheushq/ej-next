@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-export default async function About (): Promise<JSX.Element> {
+export default async function About(): Promise<JSX.Element> {
   /**
    * `cache: no-store` means that the request will be called on every page load (in contrast to being cached during build time)
    * To check the difference, simply load the page by itself (by entering the URL in the browser) - the page will take more than 20s
@@ -11,18 +11,22 @@ export default async function About (): Promise<JSX.Element> {
    * because the page has already been loaded in the background
    */
   const r = await fetch(
-    'https://hub.dummyapis.com/delay?seconds=10',
-    { cache: 'no-store' } // TODO: during development, there seems to be an issue where the soft navigation to this route gives an error. However, this is not present during production. Happened after [lng] was added
+    "https://hub.dummyapis.com/delay?seconds=10",
+    { cache: "no-store" } // TODO: during development, there seems to be an issue where the soft navigation to this route gives an error. However, this is not present during production. Happened after [lng] was added
   )
   console.log(r)
   return (
-    <div className='grid grid-cols-2 text-white p-4'>
+    <div className="grid grid-cols-2 text-white p-4">
       <div>
-        <p className='text-black'>{r.text()}</p>
-        <h1 className='leading-loose text-[15rem] font-extrabold text-accent'>About us</h1>
+        <p className="text-black">{r.text()}</p>
+        <h1 className="leading-loose text-[15rem] font-extrabold text-accent">
+          About us
+        </h1>
       </div>
       <div>
-        <Link href='/contact' className='btn btn-primary'>Contact Us</Link>
+        <Link href="/contact" className="btn btn-primary">
+          Contact Us
+        </Link>
       </div>
     </div>
   )

@@ -11,13 +11,18 @@ const Cookie = {
    *
    * Sets a secure cookie that is not accessible through JavaScript
    */
-  setSecure: (res: NextResponse, key: string, value: string, maxAge?: number | Date): void => {
+  setSecure: (
+    res: NextResponse,
+    key: string,
+    value: string,
+    maxAge?: number | Date
+  ): void => {
     res.cookies.set(key, value, {
       secure: false,
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: "lax",
       expires: maxAge,
-      path: '/'
+      path: "/"
     })
   },
   /**
@@ -30,13 +35,18 @@ const Cookie = {
    *
    * Sets a secure cookie that is accessible through JavaScript
    */
-  setReadable: (res: NextResponse, key: string, value: string, maxAge?: number | Date): void => {
+  setReadable: (
+    res: NextResponse,
+    key: string,
+    value: string,
+    maxAge?: number | Date
+  ): void => {
     res.cookies.set(key, value, {
       secure: false,
       httpOnly: false,
-      sameSite: 'lax',
+      sameSite: "lax",
       expires: maxAge,
-      path: '/'
+      path: "/"
     })
   }
 }
